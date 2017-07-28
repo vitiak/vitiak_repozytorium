@@ -15,7 +15,7 @@ class SimpleCalculator
     }
 }
 
-class Application
+class Test1Class
 {
     public static void main(String[] args) {
 
