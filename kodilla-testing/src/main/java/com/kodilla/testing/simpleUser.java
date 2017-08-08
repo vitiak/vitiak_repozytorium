@@ -8,4 +8,5 @@ public class simpleUser {
     public String getUsername() {
         return username;
     }
+
 }
