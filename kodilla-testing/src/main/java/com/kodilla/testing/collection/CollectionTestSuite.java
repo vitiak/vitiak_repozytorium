@@ -30,5 +30,15 @@ public class CollectionTestSuite {
         //when
         Assert.assertTrue(listaPustaExterminate.size()==0);
     }
+    @Test
+    public void testOddNumbersExterminatorNotEmptyList() {
+        OddNumbersExterminator Exterminator = new OddNumbersExterminator();
+        ArrayList<Integer> listaNiePusta = Exterminator.createArrayList5El(2,5,8,9,3);
+        ArrayList<Integer> listaNiePustaSpr = Exterminator.createArrayList2El(2,8);
+        //Given
+        ArrayList<Integer> listaNiePustaExterminate = Exterminator.exterminate(listaNiePusta);
+        //when
+        Assert.assertEquals(listaNiePustaExterminate, listaNiePustaSpr);
+    }
 
 }
