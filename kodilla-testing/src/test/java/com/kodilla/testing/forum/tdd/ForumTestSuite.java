@@ -1,4 +1,5 @@
 package com.kodilla.testing.forum.tdd;
+//import package test.java.com.kodilla.testing.collection.forum.tdd;
 
 import org.junit.AfterClass;
 import org.junit.Before;

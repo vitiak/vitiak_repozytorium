@@ -30,8 +30,8 @@ public class ForumComment {
 
         ForumComment that = (ForumComment) o;
 
-        if (!= forumPost.equals(that.forumPost)) return false;
-        if (!= commentBody.equals(that.commentBody)) return false;
+        if (!forumPost.equals(that.forumPost)) return false;
+        if (!commentBody.equals(that.commentBody)) return false;
         return author.equals(that.author);
     }
 
