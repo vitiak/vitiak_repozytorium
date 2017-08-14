@@ -4,6 +4,26 @@ import org.junit.*;
 import java.lang.*;
 import java.util.*;
 
+class Operations {
+    public ArrayList<Integer> createArrayList5El(int int1, int int2, int int3, int int4, int int5) {
+        ArrayList<Integer> lista5El = new ArrayList<Integer>();
+        lista5El.add(int1);
+        lista5El.add(int2);
+        lista5El.add(int3);
+        lista5El.add(int4);
+        lista5El.add(int5);
+        return lista5El;
+    }
+
+
+    public ArrayList<Integer> createArrayList2El(int int1, int int2) {
+        ArrayList<Integer> lista2El = new ArrayList<Integer>();
+        lista2El.add(int1);
+        lista2El.add(int2);
+        return lista2El;
+    }
+}
+
 public class CollectionTestSuite {
     @Before
     public void before(){
@@ -36,8 +56,10 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNotEmptyList() {
         OddNumbersExterminator Exterminator = new OddNumbersExterminator();
-        ArrayList<Integer> listaNiePusta = Exterminator.createArrayList5El(2,1,8,9,7);
-        ArrayList<Integer> listaNiePustaSpr = Exterminator.createArrayList2El(2,8);
+        Operations Operate = new Operations();
+
+        ArrayList<Integer> listaNiePusta = Operate.createArrayList5El(2,1,8,9,7);
+        ArrayList<Integer> listaNiePustaSpr = Operate.createArrayList2El(2,8);
         //Given
         ArrayList<Integer> listaNiePustaExterminate = Exterminator.exterminate(listaNiePusta);
         //when
