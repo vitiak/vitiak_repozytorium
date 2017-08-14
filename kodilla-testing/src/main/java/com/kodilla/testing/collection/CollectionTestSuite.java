@@ -29,16 +29,23 @@ public class CollectionTestSuite {
         ArrayList<Integer> listaPustaExterminate = Exterminator.exterminate(listaPusta);
         //when
         Assert.assertTrue(listaPustaExterminate.size()==0);
+        for (Integer listaParz: listaPustaExterminate) {
+            System.out.println("Lista pusta zawiera " + listaParz);
+        }
     }
     @Test
     public void testOddNumbersExterminatorNotEmptyList() {
         OddNumbersExterminator Exterminator = new OddNumbersExterminator();
-        ArrayList<Integer> listaNiePusta = Exterminator.createArrayList5El(2,5,8,9,3);
+        ArrayList<Integer> listaNiePusta = Exterminator.createArrayList5El(2,1,8,9,7);
         ArrayList<Integer> listaNiePustaSpr = Exterminator.createArrayList2El(2,8);
         //Given
         ArrayList<Integer> listaNiePustaExterminate = Exterminator.exterminate(listaNiePusta);
         //when
         Assert.assertEquals(listaNiePustaExterminate, listaNiePustaSpr);
+        for (Integer listaParz: listaNiePustaExterminate) {
+            System.out.println("Lista niepusta zawiera " + listaParz);
+        }
+
     }
 
 }
