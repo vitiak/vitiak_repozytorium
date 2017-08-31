@@ -1,6 +1,7 @@
 package com.kodilla.stream.array;
 
 import java.util.Arrays;
+import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 public class ArrayOperations {
