@@ -5,6 +5,14 @@ import java.util.List;
 
 public final class World {
 
+    public List<Continent> getContinentsCollection() {
+        return continentsCollection;
+    }
+
+    public void setContinentsCollection(List<Continent> continentsCollection) {
+        this.continentsCollection = continentsCollection;
+    }
+
     private List<Continent> continentsCollection;
 
     public BigDecimal getPeopleQuantity() {

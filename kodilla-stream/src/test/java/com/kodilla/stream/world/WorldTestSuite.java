@@ -31,6 +31,8 @@ public class WorldTestSuite {
         continents.add(America);
         continents.add(Africa);
 
+        world.setContinentsCollection(continents);
+
         Europa.addCountries(Polska);
         Europa.addCountries(Slowacja);
         Europa.addCountries(Chorwacja);
