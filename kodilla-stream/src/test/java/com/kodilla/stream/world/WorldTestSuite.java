@@ -12,16 +12,17 @@ public class WorldTestSuite {
         //Given
         List<Country> countries = new ArrayList<>();
         List<Continent> continents = new ArrayList<>();
+        World world = new World();
 
-        Country Polska = new Country("39111222");
-        Country Slowacja = new Country("12111222");
-        Country Chorwacja = new Country("18111222");
-        Country USA = new Country("239111222");
-        Country Kanada = new Country("112111222");
-        Country Meksyk = new Country("78111222");
-        Country Kamerun = new Country("139111222");
-        Country Egipt = new Country("72111222");
-        Country Kenia = new Country("28111222");
+        Country Polska = new Country(new BigDecimal("39111222"));
+        Country Slowacja = new Country(new BigDecimal("12111222"));
+        Country Chorwacja = new Country(new BigDecimal("18111222"));
+        Country USA = new Country(new BigDecimal("239111222"));
+        Country Kanada = new Country(new BigDecimal("112111222"));
+        Country Meksyk = new Country(new BigDecimal("78111222"));
+        Country Kamerun = new Country(new BigDecimal("139111222"));
+        Country Egipt = new Country(new BigDecimal("72111222"));
+        Country Kenia = new Country(new BigDecimal("28111222"));
 
         Continent Europa = new Continent();
         Continent America = new Continent();
@@ -41,12 +42,7 @@ public class WorldTestSuite {
         Africa.addCountries(Kenia);
 
         //When
-        BigDecimal totalPeople = BigDecimal.ZERO;
-        for(Continent continent : continents){
-            for (Country country : countries) {
-                totalPeople = totalPeople.add(country.getPeopleQuantity());
-            }
-        }
+        BigDecimal totalPeople = world.getPeopleQuantity();
 
         //Then
         BigDecimal expectedPeople = new BigDecimal("738000998");
