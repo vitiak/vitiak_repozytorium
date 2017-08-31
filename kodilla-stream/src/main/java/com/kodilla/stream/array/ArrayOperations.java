@@ -8,10 +8,14 @@ public class ArrayOperations {
 
     public static double getAverage(int[] numbers) {
         IntStream.range(0, numbers.length)
+                .map(n->numbers[n])
                 .forEach(System.out::println);
 
         double averageNumbers = IntStream.range(0,numbers.length)
-               .average();
+                .map(n->numbers[n])
+               .average()
+               .getAsDouble();
+
             System.out.println("Average is equal " + averageNumbers );
 
         return averageNumbers;

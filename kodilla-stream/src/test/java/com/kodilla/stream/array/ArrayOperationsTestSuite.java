@@ -22,7 +22,7 @@ public class ArrayOperationsTestSuite {
 
         //Then
         double calculatedAverageArray = ArrayOperations.getAverage(numbers);
-        double expectedAverageArray = (numbers[0]+numbers[1]+numbers[2]+numbers[3]+numbers[4])/5;
-        Assert.assertEquals(expectedAverageArray, calculatedAverageArray);
+        double expectedAverageArray = (double) (numbers[0]+numbers[1]+numbers[2]+numbers[3]+numbers[4])/5;
+        Assert.assertEquals(expectedAverageArray, calculatedAverageArray, 0.01);
     }
 }
