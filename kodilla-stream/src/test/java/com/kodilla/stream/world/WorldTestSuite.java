@@ -10,7 +10,7 @@ public class WorldTestSuite {
     @Test
     public void testGetPeopleQuantity() {
         //Given
-        List<Country> countries = new ArrayList<>();
+//        List<Country> countries = new ArrayList<>();
         List<Continent> continents = new ArrayList<>();
         World world = new World();
 
