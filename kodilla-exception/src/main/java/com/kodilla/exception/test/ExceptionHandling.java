@@ -2,7 +2,7 @@ package com.kodilla.exception.test;
 
 public class ExceptionHandling extends Exception {
 
-    /*  NIE MAM POJĘCIA O CO CHODZI W TYM ZADANIU  */
+    /*  NIE MAM POJĘCIA O CO CHODZI W TYM ZADANIU, tzn. co ja mam zrobić  */
 
     SecondChalenge secondChalenge = new SecondChalenge();
 
