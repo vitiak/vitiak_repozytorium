@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 public class FileReader {
-    public void readFile() throws IOException {
+    public void readFile() throws IOException, FileReaderException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("file/names.txt").getFile());
 
@@ -16,7 +16,9 @@ public class FileReader {
         try (Stream<String> fileLines = Files.lines(Paths.get("files/names.txt"))) {
             fileLines.forEach(System.out::println);
         } catch (IOException e) {
-            System.out.println("Bledna sciezka podana, powstał błąd: " + e);
+//            System.out.println("Bledna sciezka podana, powstał błąd: " + e);
+            throw new FileReaderException();
+
         } finally {
             System.out.println("Koniec programu!");
         }
