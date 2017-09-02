@@ -1,5 +1,7 @@
 package com.kodilla.exception.test;
 
+import com.sun.org.apache.xpath.internal.operations.Equals;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +32,8 @@ public class Flight {
         mapaLotow.put("Porto", false);
 
         for(Map.Entry<String,Boolean> entry :mapaLotow.entrySet()) {
-            if (entry.getKey() == flight.getArrivalAirport())  {
+//            if (new Equals(entry.getKey(), flight.getArrivalAirport()))  {
+            if (entry.getKey().equals(flight.getArrivalAirport()))  {
                 existsFlight = entry.getValue();
             }
         }

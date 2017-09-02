@@ -2,9 +2,9 @@ package com.kodilla.exception.test;
 
 public class FlightAdmin {
     public static void main(String[] args) throws Exception {
-//        String arrivalAirport = "Poznan";
+        String arrivalAirport = "Poznan";
 //        String arrivalAirport = "Porto";
-        String arrivalAirport = "Split";
+//        String arrivalAirport = "Split";
         Flight flightExample = new Flight("Warszawa", arrivalAirport);
         Boolean result = null;
 
