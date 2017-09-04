@@ -1,12 +1,11 @@
 package com.kodilla.good.patterns.challenges;
 
 import java.util.ArrayList;
-import java.lang.Exception;
 
 public class ProductOrderService {
 
-    private InformationService informationService;
-    private TransactionService transactionService;
+    public InformationService informationService;
+    public TransactionService transactionService;
 
     public ProductOrderService(final InformationService informationService,
                            final TransactionService transactionService ) {
@@ -14,8 +13,18 @@ public class ProductOrderService {
         this.transactionService = transactionService;
     }
 
-    public static void main (String[] args)  throws java.lang.Exception
+    public void process(String requestBuy, ArrayList<String> productList)
     {
+        Cargo cargo= new Cargo();
+        boolean possibilityToBuy = cargo.existsProduct(productList, requestBuy);
+        informationService.sendingMessage("Request to buy", possibilityToBuy);
+
+        if (possibilityToBuy) {
+            transactionService.realization();
+            informationService.sendingMessage("Request to sending", true);
+        }
+
+/*
         ArrayList<String> warehouse = new ArrayList<>();
         Cargo cargo = new Cargo();
         TransactionService transactionService = new TransactionService();
@@ -38,5 +47,5 @@ public class ProductOrderService {
             informationService.sendingMessage("Request to sending", possibilityToBuy);
             transactionService.realization();
         }
-    }
+*/    }
 }

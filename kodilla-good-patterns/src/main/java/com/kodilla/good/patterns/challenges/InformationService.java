@@ -22,7 +22,7 @@ public class InformationService {
         if (typeProcess.equals("Request to buy") && possibilityToBuy) {
             message = "We prepare the goods for shipping";
         } else if (typeProcess.equals("Request to buy") ) {
-            message = "Sorry, but we can not selll this item";
+            message = "Sorry, but we can not sell this item";
         } else if (typeProcess.equals("Request to sending")) {
             message = "Actual we sending article";
         } else {
