@@ -9,9 +9,11 @@ public class GenerationListF2D {
 
         warehouse.add("Milk");
         warehouse.add("Cheese");
-        warehouse.add("Juice");
-        warehouse.add("Fruits");
-        warehouse.add("Meet");
+        warehouse.add("Piżama");
+        warehouse.add("Koszulka");
+        warehouse.add("Spodnie");
+        warehouse.add("Skarpety");
+        warehouse.add("Kurtka");
 
         return warehouse;
     }
