@@ -10,40 +10,24 @@ public class ExecuteFinding {
         String cityFrom = "Warszawa";
         String cityTo = "Split";
 
-        FulListOfFly fullListOfFly = new FulListOfFly();
         FindingFly findingFly = new FindingFly();
+        PrintMessages printMessages = new PrintMessages();
 
         List<Fly> listFromCity = findingFly.findingFlyFromCity(cityFrom);
-
-        System.out.println("Lista lotów z  miasta " + cityFrom);
-        for(int n=0; n< listFromCity.size(); n++) {
-            System.out.println("Z miasta " + listFromCity.get(n).getFlyFrom() + " do "
-                    + listFromCity.get(n).getFlyTo() + " o godz " + listFromCity.get(n).getStartFly());
-        }
+        System.out.println("\nLista lotów z miasta " + cityFrom );
+        printMessages.printListOfFly(listFromCity);
 
         List<Fly> listToCity = findingFly.findingFlyToCity(cityTo);
+        System.out.println("\nLista lotów do miasta " + cityTo );
+        printMessages.printListOfFly(listToCity);
 
-        System.out.println("Lista lotów do  miasta " + cityTo);
-        for(int n=0; n< listToCity.size(); n++) {
-            System.out.println("Z miasta " + listToCity.get(n).getFlyFrom() + " do "
-                    + listToCity.get(n).getFlyTo() + " o godz " + listToCity.get(n).getStartFly());
-        }
+        List<Fly> listFromTo = findingFly.findingFlyFromToWithoutStop(cityFrom, cityTo);
+        System.out.println("\nLista lotów z miasta " + cityFrom + " do miasta " + cityTo );
+        printMessages.printListOfFly(listFromTo);
 
-        System.out.println("Lista lotów z przesiadką z miasta " + cityFrom + " do  miasta " + cityTo);
-        for(int n=0; n< listFromCity.size(); n++) {
-            for(int k=0; k< listToCity.size(); k++) {
-                if (listToCity.get(k).getFlyFrom().equals(listFromCity.get(n).getFlyTo())) {
-                    System.out.println("Z miasta " + listFromCity.get(n).getFlyFrom() + " do miasta " +
-                            listFromCity.get(n).getFlyTo() + " o godz " + listFromCity.get(n).getStartFly() +
-                            " a nastepnie z miasta " + listToCity.get(k).getFlyFrom() + " do "
-                            + listToCity.get(k).getFlyTo() + " o godz " + listToCity.get(k).getStartFly());
-
-                }
-            }
-
-        }
-
-
+        List<FlyPair> listFromToWithStop = findingFly.findingFlyFromToWithStop(cityFrom, cityTo);
+        System.out.println("\nLista lotów z przesiadką z miasta " + cityFrom + " do miasta " + cityTo );
+        printMessages.printListOfFlyPair(listFromToWithStop);
 
     }
 

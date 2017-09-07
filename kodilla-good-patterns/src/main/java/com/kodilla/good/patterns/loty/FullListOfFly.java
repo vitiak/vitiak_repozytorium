@@ -4,9 +4,9 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FulListOfFly {
+public class FullListOfFly {
     ArrayList<Fly> listOfFly = new ArrayList<>();
-        public FulListOfFly() {
+        public FullListOfFly() {
             listOfFly.add(new Fly("Warszawa", "Split", LocalTime.of(6, 30)));
             listOfFly.add(new Fly("Warszawa", "Lizbona", LocalTime.of(7, 30)));
             listOfFly.add(new Fly("Lizbona", "Madryt", LocalTime.of(9, 30)));
@@ -19,7 +19,7 @@ public class FulListOfFly {
             listOfFly.add(new Fly("Warszawa", "Split", LocalTime.of(15, 30)));
         }
 
-        public List<Fly> getList() {
+        public ArrayList<Fly> getList() {
             return new ArrayList<>(listOfFly);
         }
 }
