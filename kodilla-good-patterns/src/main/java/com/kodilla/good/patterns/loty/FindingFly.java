@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.loty;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,12 +9,21 @@ public class FindingFly {
 
     public List<Fly> findingFlyFromCity(String cityFrom) {
 
-        FullListOfFly fullListOfFly = new FullListOfFly();
+/*        FullListOfFly fullListOfFly = new FullListOfFly();
         List<Fly> resultListOfFly = fullListOfFly.getList().stream()
                 .filter(fly -> fly.getFlyFrom().equals(cityFrom))
                 .collect(Collectors.toList());
         return resultListOfFly;
     }
+*/
+
+        FullListOfFly fullListOfFly = new FullListOfFly();
+        ArrayList<Fly> resultListOfFly = fullListOfFly.getList().stream()
+                .filter(fly -> fly.getFlyFrom().equals(cityFrom))
+                .collect(Collectors.toCollection(ArrayList::new));
+        return resultListOfFly;
+    }
+
 
 
     public List<Fly> findingFlyToCity(String cityTo) {
