@@ -8,39 +8,23 @@ import org.junit.Test;
 public class LoggerTestSuite {
     @BeforeClass
     public static void openSettingsFile() {
-        SettingsFileEngine.getInstance().open("myapp.settings");
+        Logger.getInstance().open("myapp.settings");
     }
 
     @AfterClass
     public static void closeSettingsFile() {
-        SettingsFileEngine.getInstance().close();
+        Logger.getInstance().close();
     }
 
     @Test
-    public void testGetFileName() {
+    public void testLog() {
         //Given
         //When
-        String fileName = SettingsFileEngine.getInstance().getFileName();
-        System.out.println("Opened: " + fileName);
+//        Logger logger = new Logger();
+        Logger.getInstance().log("This is log");
+        String logName = Logger.getInstance().getLastLog();
+        //System.out.println("Opened: " + fileName);
         //Then
-        Assert.assertEquals("myapp.settings", fileName);
-    }
-
-    @Test
-    public void testLoadSettings() {
-        //Given
-        //When
-        boolean result = SettingsFileEngine.getInstance().loadSettings();
-        //Then
-        Assert.assertTrue(result);
-    }
-
-    @Test
-    public void testSaveSettings() {
-        //Given
-        //When
-        boolean result = SettingsFileEngine.getInstance().saveSettings();
-        //Then
-        Assert.assertTrue(result);
+        Assert.assertEquals("This is log", logName);
     }
 }
