@@ -7,7 +7,7 @@ public class TaskList {
     public List<String> tasks;
 
     public TaskList(List<String> tasks) {
-        tasks = new ArrayList<>();
+        this.tasks = tasks;
     }
 
 }
