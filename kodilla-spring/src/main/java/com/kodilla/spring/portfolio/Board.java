@@ -5,9 +5,13 @@ public class Board {
     public TaskList inProgressList;
     public TaskList doneList;
 
-    public Board() {}
+    public Board(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
+        this.toDoList = toDoList;
+        this.inProgressList = inProgressList;
+        this.doneList = doneList;
+    }
 
-    public TaskList getToDoList() {
+    public TaskList getToDoList()  {
         return toDoList;
     }
 
@@ -18,4 +22,9 @@ public class Board {
     public TaskList getDoneList() {
         return doneList;
     }
+
+    public void doList() {
+
+    }
+
 }
