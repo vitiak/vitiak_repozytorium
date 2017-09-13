@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public final class Library extends Prototype {
-    final String name;
+    String name;
     final Set<Book> books = new HashSet<>();
 
     public Library(final String name) {
@@ -16,6 +16,10 @@ public final class Library extends Prototype {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<Book> getBooks() {
@@ -27,14 +31,7 @@ public final class Library extends Prototype {
 
     public Library deepCopy() throws CloneNotSupportedException {
         Library clonedLibrary = (Library) super.clone();
-        clonedLibrary.books = new HashSet<>();
-        for(Library theBook : books ) {
-            Library clonedList = new Library(theBook.getName());
-            for(Book book : theBook.getBooks()) {
-                clonedList.getBooks().add(book);
-            }
-            clonedLibrary.getBooks().add(Book);
-        }
+        clonedLibrary.books.addAll(books);
         return clonedLibrary;
     }
 }
