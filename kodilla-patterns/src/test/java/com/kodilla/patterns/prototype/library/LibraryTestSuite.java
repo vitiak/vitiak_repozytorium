@@ -15,7 +15,6 @@ public class LibraryTestSuite {
     @Test
     public void testGetBooks() {
         //given
-        //creating the TasksList for todos
         Book book1 = new Book("Druzyna Pierscienia", "Tolkien", LocalDate.of(1954, 11, 23));
         Book book2 = new Book("Dwie Wieże", "Tolkien", LocalDate.of(1955, 11, 23));
         Book book3 = new Book("Powrot Krola", "Tolkien", LocalDate.of(1956, 11, 23));
@@ -51,13 +50,30 @@ public class LibraryTestSuite {
             System.out.println(e);
         }
 
+        Library deepClonedLibrary = null;
+        try {
+            deepClonedLibrary = library.deepCopy();
+            deepClonedLibrary.setName("Project number 3");
+        } catch (CloneNotSupportedException e) {
+            System.out.println(e);
+        }
+
 /**/
         //When
         int sizeSet = library.getBooks().size();
 
+
         //Then
-//        System.out.println(board);
+        System.out.println(library);
+        System.out.println(clonedLibrary);
+        System.out.println(deepClonedLibrary);
+
         Assert.assertEquals(10, sizeSet);
+        Assert.assertEquals(10, clonedLibrary.books.size());
+        Assert.assertEquals(10, deepClonedLibrary.books.size());
+        Assert.assertEquals(clonedLibrary.books, library.books);
+        Assert.assertEquals(deepClonedLibrary.books, library.books);
+
     }
 
 
