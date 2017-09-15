@@ -11,8 +11,9 @@ public class TaskFactoryTestSuite {
         TaskFactory factory = new TaskFactory();
         //When
         Task driving = factory.makeTask(TaskFactory.DRIVING);
+
         //Then
-        Assert.assertEquals(true, driving.isTaskExecuted());
+        Assert.assertEquals(false, driving.isTaskExecuted());
         Assert.assertEquals("Driving ", driving.getTaskName());
     }
 

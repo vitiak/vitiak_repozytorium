@@ -5,7 +5,9 @@ public class TaskFactory {
     public static final String SHOPPING = "SHOPPING";
     public static final String PAINTING = "PAINTING";
 
+
     public final Task makeTask(final String taskClass) {
+
         switch (taskClass) {
             case DRIVING:
                 return new DrivingTask("Driving ", "the work ", "by car");
@@ -16,5 +18,6 @@ public class TaskFactory {
             default:
                 return null;
         }
+
     }
 }
