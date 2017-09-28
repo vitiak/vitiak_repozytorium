@@ -50,7 +50,7 @@ public final class Task {
     }
 
     @ManyToOne
-    @JoinColumn(name = "TASKLIST_ID")
+
     public TaskList getTaskList() {
         return taskList;
     }
