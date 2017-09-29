@@ -19,6 +19,8 @@ import java.util.List;
 public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
+    @Autowired
+    private ProductDao productDao;
     private static final String DESCRIPTION = "Test: Learn Hibernate";
 
     @Test
@@ -28,6 +30,9 @@ public class InvoiceDaoTestSuite {
         Product product2 = new Product("Mleko");
         Product product3 = new Product("Jablka");
 
+        productDao.save(product1);
+        productDao.save(product2);
+
         Item item1 = new Item(new BigDecimal( 23), 5,new BigDecimal(115), product1);
         Item item2 = new Item(new BigDecimal( 15), 3,new BigDecimal(45), product2);
 
@@ -35,8 +40,11 @@ public class InvoiceDaoTestSuite {
         items.add(item1);
         items.add(item2);
 
-
         Invoice invoice = new Invoice("invoice no 1");
+        invoice.setItems(items);
+
+        item1.setInvoice(invoice);
+        item2.setInvoice(invoice);
 
         //When
         invoiceDao.save(invoice);
@@ -45,9 +53,9 @@ public class InvoiceDaoTestSuite {
         int id = invoice.getId();
         Invoice readInvoice = invoiceDao.findOne(id);
         Assert.assertEquals(id, readInvoice.getId());
+        Assert.assertEquals(2, readInvoice.getItems().size());
 
         //CleanUp
 //        invoiceDao.delete(id);
     }
-
 }

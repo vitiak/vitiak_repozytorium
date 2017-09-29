@@ -12,6 +12,5 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface ProductDao extends CrudRepository<Item, Integer> {
-    List<Item> findByProduct(Product product);
+public interface ProductDao extends CrudRepository<Product, Integer> {
 }

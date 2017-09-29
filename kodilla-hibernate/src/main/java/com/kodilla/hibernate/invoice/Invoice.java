@@ -31,8 +31,11 @@ public class Invoice {
         this.id = id;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "ITEM_ID")
+    @OneToMany(
+            mappedBy = "invoice",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
     public List<Item> getItems() {
         return items;
     }
@@ -41,5 +44,13 @@ public class Invoice {
         this.items = items;
     }
 
+    //@Column(name = "NUMBER")
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 }
 
