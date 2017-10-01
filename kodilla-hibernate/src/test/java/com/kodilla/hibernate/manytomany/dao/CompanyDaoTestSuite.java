@@ -61,13 +61,13 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, softwareMachineId);
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
-   //     Assert.assertEquals(1, companyParBeginNames.size());
+        Assert.assertEquals(1, companyParBeginNames.size());
         Assert.assertEquals(1, employeesParameterLastname.size());
 
         //CleanUp
                 try {
-/*
-                companyDao.delete(softwareMachineId);
+
+/*                companyDao.delete(softwareMachineId);
                 companyDao.delete(dataMaestersId);
                 companyDao.delete(greyMatterId);
                 employeeDao.delete(johnSmith);
