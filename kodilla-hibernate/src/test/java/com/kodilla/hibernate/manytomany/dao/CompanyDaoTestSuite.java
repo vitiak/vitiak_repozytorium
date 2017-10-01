@@ -61,8 +61,8 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, softwareMachineId);
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
-        Assert.assertEquals(1, companyParBeginNames.size());
-        Assert.assertEquals(1, employeesParameterLastname.size());
+        Assert.assertNotEquals(0, companyParBeginNames.size());
+        Assert.assertNotEquals(0, employeesParameterLastname.size());
 
         //CleanUp
                 try {
