@@ -1,9 +1,12 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Repository;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @NamedQuery(
         name = "Employee.employeesParameterLastname",
