@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import javax.persistence.NamedQuery;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -15,5 +17,8 @@ public interface EmployeeDao extends CrudRepository<Employee, Integer> {
 
     @Query
     List<Employee> employeesParameterLastname(@Param("PAR_LASTNAME") String lastName);
+
+    @Query
+    List<Employee> employeesLikeName(@Param("PAR_LASTNAME") String lastName);
 
 }
