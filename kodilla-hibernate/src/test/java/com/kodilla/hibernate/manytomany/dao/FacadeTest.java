@@ -59,8 +59,8 @@ public class FacadeTest {
         employeeDao.save(lindaKovalsky);
         employeeDao.save(stephanieClarckson);
 
-        List<Company> companyParBeginNames = companyDao.companyLikeName("ter");
-        List<Employee> employeesParameterLastname = employeeDao.employeesLikeName("son");
+        List<Company> companyParBeginNames = companyDao.companyLikeName("%ter%");
+        List<Employee> employeesParameterLastname = employeeDao.employeesLikeName("%son%");
 
         Assert.assertNotEquals(0, companyParBeginNames.size());
         Assert.assertNotEquals(0, employeesParameterLastname.size());

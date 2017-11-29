@@ -8,14 +8,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@NamedQueries(
-        {@NamedQuery(
+@NamedNativeQueries({
+        @NamedNativeQuery(
                 name = "Employee.employeesParameterLastname",
-                query = "select * FROM Employee WHERE LASTNAME = :PAR_LASTNAME"
+                query = "SELECT * FROM Employees WHERE LASTNAME = :PAR_LASTNAME",
+                resultClass = Employee.class
         ),
-                @NamedQuery(
+                @NamedNativeQuery(
                         name = "Employee.employeesLikeName",
-                        query = "select * FROM Employee WHERE LASTNAME like %:PAR_LASTNAME%"
+                        query = "SELECT * FROM Employees WHERE lastname like :PAR_LASTNAME",
+                        resultClass = Employee.class
                 )})
 @Entity
 @Table(name = "EMPLOYEES")

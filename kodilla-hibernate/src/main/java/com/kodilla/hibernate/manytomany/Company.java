@@ -7,18 +7,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQueries(
-        {
-@NamedQuery(
-        name = "Company.companyParBeginNames",
-        query = " FROM COMPANIES" +
-                " WHERE SUBSTR(company_name, 1, 3) = :PAR_COMPANY "
-),
-@NamedQuery(
-        name = "Facade.companyLikeName",
-        query = "SELECT * FROM COMPANIES" +
-                " WHERE company_name like %:PAR_COMPANY% "
-)})
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.companyParBeginNames",
+                query = "SELECT * FROM COMPANIES WHERE SUBSTR(company_name, 1, 3) = :PAR_COMPANY ",
+                resultClass = Company.class),
+        @NamedNativeQuery(
+                name = "Company.companyLikeName",
+                query = "SELECT * FROM Companies WHERE company_name like :PAR_COMPANY ",
+                resultClass = Company.class)
+})
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
