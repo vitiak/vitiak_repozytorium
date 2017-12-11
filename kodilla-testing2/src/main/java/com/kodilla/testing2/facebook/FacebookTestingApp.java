@@ -23,18 +23,18 @@ public class FacebookTestingApp {
 
         WebElement selectCombo1 = driver.findElement(By.xpath(XPATH_SELECT1));
         Select selectBoard = new Select(selectCombo1);
-        selectBoard.selectByIndex(20);
+        selectBoard.selectByIndex(24);
 
         while (!driver.findElement(By.xpath(XPATH_WAIT_FOR2)).isDisplayed());
 
         WebElement selectCombo2 = driver.findElement(By.xpath(XPATH_SELECT2));
         Select selectBoard2 = new Select(selectCombo2);
-        selectBoard2.selectByIndex(8);
+        selectBoard2.selectByIndex(5);
 
         while (!driver.findElement(By.xpath(XPATH_WAIT_FOR3)).isDisplayed());
 
         WebElement selectCombo3 = driver.findElement(By.xpath(XPATH_SELECT3));
         Select selectBoard3 = new Select(selectCombo3);
-        selectBoard3.selectByIndex(22);
+        selectBoard3.selectByIndex(55);
     }
 }
